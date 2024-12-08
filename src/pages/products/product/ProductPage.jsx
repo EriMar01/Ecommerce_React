@@ -51,7 +51,7 @@ const ProductPage = () => {
                 </div>
                 <div className={styles.productDetails}>
                     <div className={styles.titleContainer}>
-                        <h1><strong>{product.title}</strong></h1>
+                        <div className={styles.containerh1}><h1><strong>{product.title}</strong></h1></div>
                         <button
                             aria-label={`Toggle favorite for ${product.title}`}
                             className={`${styles.favoriteButton} ${isFavorite ? styles.filledHeart : ''}`}

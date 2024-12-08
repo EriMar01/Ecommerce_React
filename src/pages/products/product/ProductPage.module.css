@@ -3,31 +3,32 @@
     background-color: var(--secondary-color);
     padding: 50px 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Alinea el contenido al principio */
     flex-direction: column;
-    height: 100vh;
-
+    min-height: 100vh; /* Asegura que ocupe toda la altura */
+    justify-content: flex-start;
 }
 
 .productInfo {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
-    flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
+    flex-wrap: wrap;
     width: 100%;
     margin-top: 30px;
     padding: 20px;
-    
-
+    flex: 1; /* Permite que este contenedor ocupe el espacio disponible */
 }
 
 .titleContainer {
-    position: relative; /* Permite posicionar elementos internos si es necesario */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex: auto;
     margin-bottom: 20px;
     border-bottom: 2px solid #333;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
 }
 
 .filledHeart {
@@ -58,7 +59,6 @@
     font-weight: var(--font-weight-bold);
     color: var(--primary-color);
     margin-bottom: 10px;
-    max-width: calc(100% - 50px);
 }
 
 .productDetails p {
@@ -84,7 +84,7 @@
     border-radius: 4px;
     text-align: center; 
     font-weight: bold;
-    
+    margin-bottom: 30px; /* Asegura que haya espacio debajo del botón */
 }
 
 .backLink:hover {
@@ -95,12 +95,14 @@
     transform: scale(1.05);
 }
 
+.containerh1{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
 .favoriteButton {
-    position: absolute;
-    margin-left: 10px;
-    margin-top: -10px;
-    top: 10px;
-    right: 10px;
+    margin-left: 20px; /* Ajuste para dar espacio entre el título y el corazón */
     background: none;
     border: none;
     font-size: 2rem;
@@ -157,9 +159,14 @@
 
 /* Responsive improvements */
 @media (max-width: 768px) {
+    .productPage {
+        padding: 20px 15px;
+    }
+
     .productInfo {
         flex-direction: column;
         align-items: center;
+        gap: 20px; /* Add more spacing */
     }
 
     .productImage,
@@ -174,7 +181,7 @@
     }
 
     .productPrice {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .quantityControls {
@@ -186,5 +193,26 @@
     .quantityControls button:last-child {
         margin-left: 0;
         margin-top: 10px;
+    }
+
+    /* Adjust backLink styles for smaller screens */
+    .backLink {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productDetails h1 {
+        font-size: 1.8rem;
+    }
+
+    .productPrice {
+        font-size: 1.2rem;
+    }
+
+    .quantityControls button {
+        padding: 8px 10px;
+        font-size: 1rem;
     }
 }
