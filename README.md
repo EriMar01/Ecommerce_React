@@ -1,4 +1,5 @@
-Para correr el proyecto
-npm install
+## Para correr el proyecto
 
-npm run dev
+`npm install`
+
+`npm run dev`
