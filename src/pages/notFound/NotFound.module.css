@@ -1,0 +1,68 @@
+/* Container styling for full screen */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    padding: 0 20px;
+}
+
+/* Error section styling */
+.errorSection {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Error title styling */
+.errorTitle {
+    font-size: 120px;
+    color: #ff6347; /* Tomato red */
+    margin: 0;
+    font-weight: bold;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Error message styling */
+.errorMessage {
+    font-size: 1.25rem;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Button to go back to home page */
+.homeButton {
+    font-size: 1.2rem;
+    background-color: #ff6347;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.homeButton:hover {
+    background-color: #ff4500; /* Darker red for hover */
+}
+
+/* Animation for the error number bouncing effect */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

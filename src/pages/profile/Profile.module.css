@@ -1,0 +1,146 @@
+/* Botón Logout */
+.logoutButton {
+    display: flex;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: white;
+    text-align: center;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 20px auto;
+    width: 14%;
+}
+
+.logoutButton:hover {
+    background-color: var(--cta-button-hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #555;
+}
+
+
+/* Contenedor principal */
+.profileContainer {
+    padding: 60px 20px; /* Aumentamos el padding para dar más espacio */
+    max-width: 93%; /* Ampliamos el tamaño máximo para una mejor disposición */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.favorite{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+
+/* Títulos principales */
+.title {
+    font-size: 2.5rem; /* Aumentamos el tamaño del título */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    color: #333;
+    font-weight: bold;
+
+}
+
+/* Subtítulos */
+.subTitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 50px; /* Aumentamos el margen inferior para más espacio */
+    line-height: 1.6; /* Mejoramos la legibilidad con mayor altura de línea */
+}
+
+/* Contenedor de las secciones */
+.sections {
+    display: flex;
+    flex-direction: row; /* Cambiamos la dirección a fila para aprovechar mejor el espacio */
+    justify-content: space-between;
+    gap: 40px; /* Aumentamos el espacio entre las tarjetas */
+    margin-top: 40px;
+    flex-wrap: wrap; /* Asegura que las tarjetas se ajusten a pantallas más pequeñas */
+}
+
+
+/* Estilo de las tarjetas de información */
+.profileCard {
+    background-color: var(--background-color); /* Fondo de las tarjetas */
+    padding: 25px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 6px 15px var(--box-shadow); /* Sombra más prominente para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavizamos la transición de los efectos */
+    margin-bottom: 60px; /* Aumentamos el margen inferior para separación entre tarjetas */
+}
+
+.profileCard:hover {
+    transform: translateY(-8px); /* Efecto hover más pronunciado */
+    box-shadow: 0 8px 20px var(--box-shadow); /* Sombra más grande en hover */
+}
+
+/* Enlaces de favoritos */
+.favoriteLink {
+    display: block;
+    text-align: center;
+    margin-top: 40px; /* Aumentamos el margen superior */
+    font-size: 1.1rem;
+    color: var(--highlight-color); /* Usamos el color destacado */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.favoriteLink:hover {
+    text-decoration: underline;
+    color: var(--cta-button-hover-color); /* Cambiamos el color en hover */
+}
+
+
+/* Botón CTA */
+.ctaButton {
+    background-color: var(--highlight-color); /* Color principal del botón */
+    color: white;
+    padding: 18px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadimos transición suave para el hover */
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    width: auto;
+}
+
+.ctaButton:hover {
+    background-color: var(--cta-button-hover-color); /* Cambio de color en hover */
+    transform: translateY(-3px); /* Le damos un efecto de desplazamiento al hacer hover */
+}
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+    .sections {
+        flex-direction: column; /* Ajustamos a columna en pantallas pequeñas */
+        align-items: center; /* Centrado en pantallas pequeñas */
+    }
+
+    .profileCard {
+        width: 93%; /* Aumentamos el ancho de las tarjetas en pantallas pequeñas */
+        margin-bottom: 20px; /* Menor espacio entre las tarjetas */
+    }
+
+    .ctaButton {
+        width: 100%; /* El botón ocupa todo el ancho en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    .favoriteLink {
+        margin-top: 20px; /* Menos espacio entre el enlace y el botón */
+        font-size: 1rem; /* Reducimos ligeramente el tamaño del texto */
+    }
+}

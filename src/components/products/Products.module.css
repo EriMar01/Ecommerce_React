@@ -1,0 +1,190 @@
+.productsContainer {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Columnas flexibles con un mínimo de 240px */
+    gap: 30px;  /* Aumentamos el espacio entre las columnas y las filas */
+    justify-items: center; /* Centra los productos dentro de cada columna */
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+    box-sizing: border-box; /* Para asegurar que el padding no afecte el ancho total */
+}
+
+.productCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:  space-between;
+    background-color: white;
+    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible */
+    height: 100%; /* Se ajusta la altura según el contenido */
+    padding: 15px;  /* Aumentamos el padding dentro de cada tarjeta */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; /* Añadimos un margen inferior para dar espacio a la siguiente fila */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más prominente */
+}
+
+.productLink {
+    text-decoration: underline; /* Subraya el texto */
+    color: inherit; /* Mantiene el color original del texto */
+    transition: color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+.productLink:hover {
+    color: #ff6347; /* Cambia el color cuando el mouse pasa sobre el enlace */
+}
+
+
+/* Efecto de hover al pasar el mouse */
+.productCard:hover {
+    transform: scale(1.05);
+}
+
+.productImage {
+    width: 12rem;
+    object-fit: fill;
+    height: 12rem;
+    max-width: 120px; /* Limitar el tamaño máximo de la imagen */
+    margin-bottom: 15px; /*espacio debajo de la imagen */
+}
+
+.productTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px; /*espacio entre el título y el precio */
+}
+
+.productPrice {
+    font-size: 1rem;
+    color: #007bff;
+    margin-bottom: 15px; /*espacio entre el precio y la categoría */
+}
+
+.productCategory {
+    font-size: 1rem; /*tamaño de la fuente de la categoría */
+    color: #777;
+    margin-bottom: 8px; /*espacio entre la categoría y la descripción */
+}
+
+.productDescription {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.favoriteButton {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde el borde superior */
+    right: 10px; /* Ajusta la distancia desde el borde derecho */
+    background: none;
+    border: none;
+    font-size: 1.5rem;  /* Tamaño de los íconos de corazón */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.favoriteButton:hover {
+    transform: scale(1.2);
+}
+
+.filledHeart {
+    color: red;  /* Cambia el color del corazón cuando está lleno */
+}
+
+.quantityControls button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 5px; /* Espaciado entre botones */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quantityControls button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.quantityControls span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 10px; /* Espacio alrededor del número */
+}
+
+
+/* Media query para pantallas medianas (por ejemplo, tabletas) */
+@media (max-width: 1024px) {
+    .productsContainer {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajustar a un tamaño más pequeño */
+        gap: 15px; /* Reducir el espacio entre las filas */
+    }
+
+    .productCard {
+        padding: 12px;  /* Reducir más el padding en pantallas medianas */
+    }
+
+    .productImage {
+        max-width: 160px;  /* Limitar el tamaño máximo de las imágenes en pantallas medianas */
+    }
+
+    .productTitle {
+        font-size: 1.2rem;  /* Reducir aún más el tamaño del título */
+    }
+
+    .productPrice {
+        font-size: 0.9rem;  /* Reducir aún más el tamaño del precio */
+    }
+}
+
+/* Media query para pantallas pequeñas (por ejemplo, teléfonos móviles) */
+@media (max-width: 768px) {
+    .productsContainer {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Ajustar a más flexibilidad en pantallas pequeñas */
+        gap: 15px;  /* Reducir aún más el espacio entre las filas */
+    }
+
+    .productCard {
+        padding: 10px;  /* Reducir padding aún más */
+    }
+
+    .productImage {
+        max-width: 140px;  /* Limitar aún más el tamaño de las imágenes */
+    }
+
+    .productTitle {
+        font-size: 1.1rem;  /* Reducir más el tamaño del título */
+    }
+
+    .productPrice {
+        font-size: 0.85rem;  /* Reducir más el tamaño del precio */
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .productsContainer {
+        grid-template-columns: 1fr; /* 1 columna por fila en pantallas pequeñas */
+        gap: 15px; /* Mantener un buen espacio entre filas */
+    }
+
+    .productCard {
+        padding: 8px;  /* Reducir el padding al mínimo */
+    }
+
+    .productImage {
+        max-width: 120px;  /* Limitar aún más el tamaño de las imágenes */
+    }
+
+    .productTitle {
+        font-size: 1rem;  /* Reducir aún más el tamaño del título */
+    }
+
+    .productPrice {
+        font-size: 0.8rem;  /* Reducir aún más el tamaño del precio */
+    }
+}

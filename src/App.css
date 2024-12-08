@@ -1,0 +1,12 @@
+/* Estructura principal */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Fondo */
+.app-background {
+  background-color: var(--background-color);
+  flex: 1;
+}

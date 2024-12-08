@@ -1,0 +1,45 @@
+.homeContainer {
+    background-color: var(--secondary-color); /* Fondo suave */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.hero {
+    color: white;
+    text-align: center;
+    background-color: #fff;
+    padding: 50px 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 98%;
+    height: 27rem;
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: #333;
+    margin: 50px 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.subscribeSection, .testimonialSection {
+    margin-top: 50px;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* Reducir la altura en pantallas más pequeñas */
+    }
+
+}

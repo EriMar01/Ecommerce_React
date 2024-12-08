@@ -1,0 +1,80 @@
+.testimonials {
+    background-color: var(--secondary-color); /* Utilizando la variable para el fondo */
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color); /* Utilizando la variable para el color del texto */
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.testimonialList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin-top: 20px;
+}
+
+.testimonialCard {
+    background-color: white;
+    border: 1px solid var(--border-color, #ddd); /* Usando variable para el color del borde */
+    padding: 25px;
+    max-width: 320px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px var(--box-shadow, rgba(0, 0, 0, 0.1)); /* Utilizando la variable de sombra */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: 30%;
+    box-sizing: border-box;
+}
+
+.testimonialCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más profunda en hover */
+}
+
+.testimonialCard p {
+    font-style: italic;
+    color: var(--text-color, #555); /* Utilizando la variable para el color del texto */
+    font-size: 1.1rem;
+}
+
+.testimonialCard p:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.testimonialCard p:last-child {
+    font-weight: bold;
+    color: var(--primary-color); /* Usando la variable para el color del nombre */
+    margin-top: 10px;
+}
+
+.stars span {
+    font-size: 1.5rem;
+    color: var(--star-color, #ffd700); /* Usando la variable para el color de las estrellas */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .testimonialCard {
+        flex-basis: 45%; /* En tabletas, las tarjetas ocupan un 45% del ancho */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonialList {
+        flex-direction: column;
+        align-items: center;
+    }
+    .testimonialCard {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+}

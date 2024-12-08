@@ -1,0 +1,84 @@
+/* Contenedor principal de la página */
+.pageContainer {
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Título de la página */
+.title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 10px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    color: #333;
+    font-weight: bold;
+}
+
+/* Sección de productos */
+.productsSection {
+    flex: 1; /* Para permitir que esta sección crezca y mantenga la paginación en su lugar */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+
+/* Contenedor para la paginación (tanto arriba como abajo) */
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Asegurar espacio suficiente abajo */
+}
+
+/* Media query para pantallas medianas (por ejemplo, tabletas) */
+@media (max-width: 1024px) {
+    .productsSection {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta a 2 o más productos por fila */
+    }
+}
+
+/* Media query para pantallas pequeñas (por ejemplo, teléfonos móviles) */
+@media (max-width: 768px) {
+    .productsSection {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajusta el tamaño de la columna para más flexibilidad */
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .productsSection {
+        grid-template-columns: 1fr; /* 1 columna por fila en pantallas pequeñas */
+    }
+}
+
+/* Estilo para el texto de carga */
+.loading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    animation: pulse 1.5s infinite ease-in-out;
+    display: flex;
+    margin-top: 10%;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 100vh; /* Para que se centre en toda la pantalla */
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+}

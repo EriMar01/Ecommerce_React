@@ -1,0 +1,27 @@
+.userOrders {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.ordersList {
+    list-style: none;
+    padding: 0;
+}
+
+.orderItem {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+.orderItem:hover {
+    color: #007bff;
+    cursor: pointer;
+}

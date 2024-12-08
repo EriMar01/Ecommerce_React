@@ -1,0 +1,85 @@
+.authWarning {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center; 
+    text-align: center;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px var(--box-shadow);
+    width: 70%;
+    height: 50%;
+
+    /* Nuevas propiedades para centrar verticalmente */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.warningTitle {
+    font-size: 2.7rem;
+    color: var(--highlight-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 0 4px 6px rgba(207, 24, 24, 0.4);
+}
+
+.warningText {
+    font-size: 1rem;
+    color: 666;
+    margin-bottom: 25px;
+}
+
+.authButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+.ctaButton {
+    flex: 1;
+    padding: 12px 20px;
+    background-color: var(--cta-button-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+    background-color: var(--cta-button-hover-color);
+    transform: translateY(-3px);
+}
+
+.authLooding {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    animation: pulse 1.5s infinite ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Para que se centre en toda la pantalla */
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+}

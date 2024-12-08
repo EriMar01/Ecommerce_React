@@ -1,0 +1,83 @@
+/* Contenedor Principal */
+.containerLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    padding: 20px;
+}
+
+/* Título */
+.loginTitle {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    color: #333;
+    font-weight: bold;
+}
+
+/* Formulario */
+.loginform {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px var(--box-shadow);
+}
+
+/* Etiquetas de los campos */
+.loginLabel {
+    display: block;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Campos de entrada */
+.loginInput {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    transition: border-color 0.3s ease;
+}
+
+.loginInput:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 5px var(--highlight-color);
+}
+
+/* Botón de envío */
+.ctaButton {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cta-button-color);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+    background-color: var(--cta-button-hover-color);
+    transform: translateY(-3px);
+}
+
+.ctaButton:disabled {
+    opacity: 0.6; /* Reduce la opacidad para dar efecto de deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor a no permitido */
+}
+

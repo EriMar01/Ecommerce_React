@@ -1,0 +1,112 @@
+/* Global container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Hero section styling */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 15px var(--box-shadow); 
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Mission section styling */
+.mission {
+    margin-bottom: 40px;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Values section styling */
+.values {
+    margin-bottom: 40px;
+}
+
+.valuesList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.valueItem {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.valueItem:hover {
+    transform: translateY(-8px); /* Efecto hover más pronunciado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valueItem h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.valueItem p {
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Call to Action section styling */
+.cta {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #ff9900;
+    border-radius: 8px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.ctaButton {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: #555;
+}

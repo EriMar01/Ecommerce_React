@@ -1,0 +1,91 @@
+.cta {
+    background-color: var(--primary-color); /* Usamos la variable para el fondo */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--box-shadow); /* Sombra usando la variable global */
+    margin: 0 auto;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.cta p {
+    font-size: 1rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.subscribeForm {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.emailInput {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    width: 60%;
+    transition: box-shadow 0.3s ease;
+}
+
+.emailInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--highlight-color, rgba(255, 102, 0, 0.6)); /* Usando una variable de resalte */
+}
+
+.subscribeButton {
+    background-color: var(--cta-button-color, #ff6600); /* Usamos la variable para el color de fondo del botón */
+    color: white;
+    padding: 11px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.subscribeButton:hover {
+    background-color: var(--cta-button-hover-color, #e55b00); /* Usamos la variable para el color hover del botón */
+    transform: translateY(-3px);
+}
+
+.subscribeButton:active {
+    transform: translateY(1px);
+}
+
+.successMessage {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--success-color, #77ff00); /* Usamos la variable para el color del mensaje de éxito */
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .cta {
+        padding: 30px 15px;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .subscribeForm {
+        flex-direction: column;
+    }
+
+    .emailInput {
+        width: 90%;
+    }
+}

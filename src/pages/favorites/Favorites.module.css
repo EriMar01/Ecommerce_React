@@ -1,0 +1,162 @@
+/* Estilos específicos de UserFavorites */
+.userFavorites {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centra horizontalmente */
+    margin: 0; /* Elimina margen */
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    height: 100%; /* Asegura que ocupe toda la altura */
+}
+
+.sectionTitle {
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 2.5rem;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    color: #333;
+    font-weight: bold;
+}
+
+.emptyFavorite {
+    padding: 40px;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    
+}
+
+
+.favoritesList {
+    list-style: none;
+    padding: 20px;
+}
+
+
+.favoriteItem {
+    font-size: 1rem;
+    color: var(--primary-color);
+    gap: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease;
+    
+}
+
+.favoriteItem:hover {
+    color: var(--highlight-color);
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.productTitleLink {
+    flex: 1; /* Toma el espacio restante */
+    text-align: left; /* Alinea el texto del título a la izquierda */
+    color: var(--primary-color);
+    text-decoration: none; /* Elimina subrayado */
+}
+
+.productTitleLink h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    word-break: break-word; /* Evita problemas con títulos largos */
+}
+
+.productImage {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.remotefavoriteButton {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: var(--highlight-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin-left: 12px;
+
+}
+
+.remotefavoriteButton:hover {
+    transform: translateY(-3px);
+}
+
+.remotefavoriteButton:active {
+    transform: translateY(1px);
+}
+
+
+/* Estilo del link hacia el perfil con aspecto de botón */
+.menuFavorite {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo del link hacia el perfil */
+.backtoProfile {
+    text-align: center;
+    background-color: var(--cta-button-color); /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 0 0 0 20px;
+    padding: 12px 8rem;
+}
+
+.backtoProfile:hover {
+    background-color: var(--cta-button-hover-color); /* Cambio de color de fondo al hacer hover */
+    transform: translateY(-3px); /* Efecto de movimiento al hacer hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+.backtoProfile:active {
+    transform: translateY(1px); /* Efecto al hacer clic */
+    box-shadow: none; /* Elimina la sombra al hacer clic */
+}
+
+
+.priceandRemote {
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    gap: 12px; /* Espacio entre los elementos */
+    width: 100%; /* Asegura que ocupen todo el espacio disponible */
+    max-width: 11rem; /* Ajusta el valor según tu diseño */
+    margin: 0 auto; /* Centra el contenedor si es necesario */
+    display: flex;
+}
+
+.priceandRemote p,
+.priceandRemote button {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Resetea padding */
+    text-align: center; /* Opcional, si es necesario */
+}
