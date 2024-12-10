@@ -9,7 +9,7 @@ import ProductPage from "./pages/products/product/ProductPage";
 import Profile from "./pages/profile/Profile";
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import Layout from "./components/layout/Layout";
-import NotFound from './pages/notfound/NotFound';
+import NotFound from './pages/notFound/NotFound';
 import {FavoritesProvider} from './context/providers/FavoritesProvider';
 import {CartProvider} from './context/providers/CartProvider';
 import {AuthProvider} from './context/providers/AuthProvider';
