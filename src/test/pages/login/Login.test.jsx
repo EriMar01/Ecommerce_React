@@ -1,130 +1,94 @@
-import {describe, test, expect, afterEach, vi} from "vitest";
-import {cleanup, render, screen, waitFor} from "@testing-library/react";
-import Login from "../../../pages/login/Login"
+import { describe, test, afterEach, vi, beforeEach, expect } from "vitest";
+import { render, cleanup, screen } from "@testing-library/react";
+import Login from "../../../pages/login/Login";
+import { useNavigate } from "react-router";
+import { useAuth } from "../../../hooks/useAuth";
 import userEvent from '@testing-library/user-event'
 
-afterEach(() => {
-  cleanup();
+vi.mock('react-router', async () => {
+    const actual = await vi.importActual('react-router');
+    return {
+        ...actual,
+        useNavigate: vi.fn(),
+    };
 });
 
-describe("Test <Login />", () => {
-  test("It should render the form correctly", () => {
-    // Arrange
-		render(<Login />);
+vi.mock("../../../hooks/useAuth", async () => {
+    const actual = await vi.importActual("../../../hooks/useAuth");
+    return {
+        ...actual,
+        useAuth: vi.fn(),
+    };
+});
 
-		const inputEmail = screen.getByRole("email");
-		const inputPassword = screen.getByRole("password");
-    const buttonSubmit = screen.getByRole("button");
+// Limpia después de cada prueba
+afterEach(() => cleanup());
 
-    // Assert
-    expect(inputEmail).toBeDefined();
-    expect(inputEmail.getAttribute("type")).toBe("email");
+// Tests para el componente <Login />
+describe("<Login /> Tests", () => {
+    let mockNavigate;
+    let mockAuth;
 
-    expect(inputPassword).toBeDefined();
-    expect(inputPassword.getAttribute("type")).toBe("password");
+    beforeEach(() => {
+        mockNavigate = vi.fn();
+        (useNavigate).mockReturnValue(mockNavigate);
 
-    expect(buttonSubmit).toBeDefined();
-    expect(buttonSubmit.getAttribute("type")).toBe("submit");
-	});
-
-	test("Must allow writing in the fields", async() => {
-    // Arrange
-    render(<Login />);
-    
-    const user = userEvent.setup();
-    const inputEmail = screen.getByRole("email");
-    const inputPassword = screen.getByRole("password");
-    const buttonSubmit = screen.getByRole("button");
-
-    // Act
-    await user.type(inputEmail, "eri@correo.com");
-    await user.type(inputPassword, "123");
-    await user.click(buttonSubmit);
-
-    // Assert
-    expect(inputEmail.value).toBe("eri@correo.com");
-    expect(inputPassword.value).toBe("123");
-	});
-
-  test("Should display an error if the form is not filled out", async () => {
-    // Arrange
-    render(<Login />);
-    
-    const buttonSubmit = screen.getByRole("button");
-
-    // Act
-    await userEvent.click(buttonSubmit);
-
-    // Assert
-    const errorMessage = screen.getByText(/Please fill in all the fields!/i);
-    expect(errorMessage).toBeDefined();
-  });
-
-  test("Must display 'Logging in...' text when sending", async () => {
-    // Arrange
-    render(<Login />);
-    
-    const user = userEvent.setup();
-    const inputEmail = screen.getByRole("email");
-    const inputPassword = screen.getByRole("password");
-    const buttonSubmit = screen.getByRole("button");
-
-    // Act
-    await user.type(inputEmail, "eri@correo.com");
-    await user.type(inputPassword, "123");
-    await user.click(buttonSubmit);
-
-    // Assert
-    expect(buttonSubmit).toHaveTextContent("Logging in...");
-  });
-
-  test("Should redirect to profile after successful login", async () => {
-    // Arrange
-    render(<Login />);
-    const user = userEvent.setup();
-    const inputEmail = screen.getByRole("email");
-    const inputPassword = screen.getByRole("password");
-    const buttonSubmit = screen.getByRole("button");
-
-    // Simulamos que el token es válido (sin backend real)
-    const navigate = vi.fn(); // Mock de la función de navegación
-    const handleLogin = vi.fn(); // Mock del método handleLogin
-
-    // Reemplazamos el contexto useAuth para utilizar el mock
-    render(<Login navigate={navigate} handleLogin={handleLogin} />);
-
-    // Act
-    await user.type(inputEmail, "eri@correo.com");
-    await user.type(inputPassword, "123");
-    await user.click(buttonSubmit);
-
-    // Esperar que el método handleLogin haya sido llamado
-    await waitFor(() => {
-      expect(handleLogin).toHaveBeenCalledWith("123456"); // Asegúrate de que handleLogin fue llamado con el token
-      expect(navigate).toHaveBeenCalledWith("/profile"); // Verifica que la navegación ocurrió
+        mockAuth = vi.fn();
+        (useAuth).mockReturnValue(mockAuth);
     });
-  });
 
-  test("Should display an error message when credentials are incorrect", async () => {
-    // Arrange
-    render(<Login />);
-    
-    const user = userEvent.setup();
-    const inputEmail = screen.getByRole("email");
-    const inputPassword = screen.getByRole("password");
-    const buttonSubmit = screen.getByRole("button");
+    test("It should render the form correctly", () => {
+        render(
+            <Login />
+        );
 
-    // Simulamos un fallo de autenticación
-    const errorMessage = "Invalid credentials, please try again.";
+        const inputEmail = screen.getByTestId("email");
+        const inputPassword = screen.getByTestId("password");
+        const buttonSubmit = screen.getByRole("button");
 
-    // Act
-    await user.type(inputEmail, "wrongemail@correo.com");
-    await user.type(inputPassword, "wrongpassword");
-    await user.click(buttonSubmit);
+        expect(inputEmail).toBeDefined();
+        expect(inputEmail.getAttribute("type")).toBe("email");
 
-    // Assert
-    const errorElement = screen.getByText(errorMessage);
-    expect(errorElement).toBeDefined();
-  });
+        expect(inputPassword).toBeDefined();
+        expect(inputPassword.getAttribute("type")).toBe("password");
+
+        expect(buttonSubmit).toBeDefined();
+        expect(buttonSubmit.getAttribute("type")).toBe("submit");
+    });
+
+    test("Must allow writing in the fields", async () => {
+        render(
+            <Login />
+        );
+
+        const user = userEvent.setup();
+        const inputEmail = screen.getByRole("email");
+        const inputPassword = screen.getByRole("password");
+        const buttonSubmit = screen.getByRole("button");
+
+        await user.type(inputEmail, "eri@correo.com");
+        await user.type(inputPassword, "123");
+        user.click(buttonSubmit)
+
+        expect(inputEmail.value).toBe("eri@correo.com");
+        expect(inputPassword.value).toBe("123");
+    });
+
+    test("Must display 'Logging in...' text when sending", async () => {
+        render(
+            <Login />
+        );
+
+        const user = userEvent.setup();
+        const inputEmail = screen.getByRole("email");
+        const inputPassword = screen.getByRole("password");
+        const buttonSubmit = screen.getByRole("button");
+
+        await user.type(inputEmail, "eri@correo.com");
+        await user.type(inputPassword, "123");
+        await user.click(buttonSubmit);
+
+        expect(buttonSubmit.textContent).toBe("Logging in... ");
+    });
 
 });

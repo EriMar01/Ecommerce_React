@@ -1,5 +1,7 @@
-## Para correr el proyecto
+## To run the project
 
-`npm install`
+`npm install` // Install dependencies
 
-`npm run dev`
+`npm run dev` // Run the program
+
+`npm run test` // To run tests
